@@ -29,10 +29,15 @@ function loop(){
     ctx.fillText("texto... ", cnv.width/4, cnv.height/2);
 	requestAnimationFrame(loop, "canvas");
 }
-function encontrar(flag){//descobre index do objeto que corresponda a flag com maior index do array
+/*****************************************************************************************************/
+function encontrar(flag, n){//descobre index do objeto que corresponda a flag com maior index do array
+	let num = n;
 	for (let i = sprites.length - 1; i >= 0; i--) {
 		if (sprites[i].flag == flag) {
-			return i;
+			if(!num){
+				return i;
+			}
+			num--;
 		}
 	}
     return false;
