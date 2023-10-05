@@ -24,9 +24,15 @@ function loop(){
 			sprites[i].exe();/////////////////  movimento do jogo...            
 		//}////////////////////////////////////
 		sprites[i].render();/////////////// renderiza na tela...
-	}    
+	}
+	for (let i = 0 ; i < sprites.length; i++){//exclui do array
+		if (sprites[i].flag == 'excluir' || sprites[i].flag == 'delete') {
+			sprites.splice(i, 1);
+		}
+	}
     ctx.font = "10px Arial";//  TEXTO...
     ctx.fillText("texto... ", cnv.width/4, cnv.height/2);
+
 	requestAnimationFrame(loop, "canvas");
 }
 /*****************************************************************************************************/
