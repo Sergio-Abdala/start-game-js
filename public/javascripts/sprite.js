@@ -15,6 +15,9 @@ function Sprite(imgSrc, flag, srcX, srcY, lar, alt, posX, posY){
 		this.movDown = false;
 		this.speed = 1;
         this.flag = flag;
+		this.status = false;
+		this.contLoop = 0;
+		this.frequencia = 25;
     //metodos..............................
     this.render = function(){//renderizar em tela...
         //if (this.exibir) {
@@ -38,7 +41,24 @@ function Sprite(imgSrc, flag, srcX, srcY, lar, alt, posX, posY){
             this.posY += this.speed;
         }else{
 			
-        }        
+        }
+		//
+		if (this.flag == 'batman') {
+			if (this.contLoop > this.frequencia) {
+				switch (this.status) {
+					case 'corre':
+						//
+						break;
+				
+					default://parado stand
+						(this.srcX == 27) ? this.srcX = 71 : (this.srcX == 71) ? this.srcX = 113 : this.srcX = 27;
+						break;
+				}
+				
+				this.contLoop=0;
+			}
+			this.contLoop++;
+		}
     }
 }
 Sprite.prototype.metax = function(){

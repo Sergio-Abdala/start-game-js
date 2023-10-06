@@ -7,12 +7,12 @@ var GLOBAIS = {
     vida: 3,
     pontos: 0
 }
-/*sprites.push(new Sprite('images/imagem.png', 'player', 26, 17, 14, 14, 143, 115));
+sprites.push(new Sprite('images/batman.png', 'batman', 27, 246, 36, 65, 10, 10));
 
-sprites[encontrar('player')].img.onload = function(){
+sprites[encontrar('batman')].img.onload = function(){
+	console.log('start game');
     loop();
-}*/
-
+}
 //************************************************************************************************ */
 function loop(){
     
