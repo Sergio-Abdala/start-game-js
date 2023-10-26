@@ -5,7 +5,8 @@ var sprites = new Array();
 
 var GLOBAIS = {
     vida: 3,
-    pontos: 0
+    pontos: 0,
+	pause: false
 }
 sprites.push(new Sprite('images/batman.png', 'batman', 27, 246, 36, 65, 10, 10));
 
@@ -20,9 +21,9 @@ function loop(){
 	ctx.clearRect(0,0,cnv.width,cnv.height);
 	for (let i = 0 ; i < sprites.length; i++) {//percorre array de sprites
 
-		//if (!pause && !gameOver) {/////////////
+		if (!GLOBAIS.pause) {/////////////
 			sprites[i].exe();/////////////////  movimento do jogo...            
-		//}////////////////////////////////////
+		}////////////////////////////////////
 		sprites[i].render();/////////////// renderiza na tela...
 	}
 	for (let i = 0 ; i < sprites.length; i++){//exclui do array
@@ -31,7 +32,7 @@ function loop(){
 		}
 	}
     ctx.font = "10px Arial";//  TEXTO...
-    ctx.fillText("texto... ", cnv.width/4, cnv.height/2);
+    ctx.fillText("srcX --> "+ sprites[encontrar('batman')].srcX, cnv.width/4, cnv.height/2);
 
 	requestAnimationFrame(loop, "canvas");
 }

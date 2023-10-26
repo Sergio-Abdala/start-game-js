@@ -95,6 +95,7 @@ function keyupHandler(e){
 		break;
 		case 80: // p letra...
 			console.log('letra p <==> teclado...');
+			(GLOBAIS.pause) ? GLOBAIS.pause = false : GLOBAIS.pause = true;
 		break;
 	}
 }
