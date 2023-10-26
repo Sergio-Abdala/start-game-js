@@ -44,7 +44,7 @@ function Sprite(imgSrc, flag, srcX, srcY, lar, alt, posX, posY){
         }
 		//
 		if (this.flag == 'batman') {
-			this.status = 'corre'; //fixado apenas para implementação???
+			//this.status = 'corre'; //fixado apenas para implementação???
 			if (this.contLoop > this.frequencia) {
 				switch (this.status) {
 					case 'corre':						
@@ -54,6 +54,8 @@ function Sprite(imgSrc, flag, srcX, srcY, lar, alt, posX, posY){
 						break;
 				
 					default://parado stand
+						this.srcY = 246;
+						this.lar = 36;
 						(this.srcX == 27) ? this.srcX = 71 : (this.srcX == 71) ? this.srcX = 113 : this.srcX = 27;
 						break;
 				}

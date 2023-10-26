@@ -8,10 +8,12 @@ window.addEventListener("keyup", keyupHandler, false);
 function keydownHandler(e){	
 	switch(e.keyCode){
 		case RIGHT:
-			sprites[encontrar('player')].movRight = true;
-			sprites[encontrar('player')].movLeft = false;
+			/*sprites[encontrar('player')].movRight = true;
+			sprites[encontrar('player')].movLeft = false;*/
 			//sprites[encontrar('player')].movUp = false;
 			//sprites[encontrar('player')].movDown = false;
+			sprites[encontrar('batman')].status = 'corre';
+			sprites[encontrar('batman')].frequencia = 5;
 		break;
 		case LEFT:
 			sprites[encontrar('player')].movRight = false;
@@ -37,7 +39,10 @@ function keyupHandler(e){
 	//console.log(e.keyCode);
 	switch(e.keyCode){
 		case RIGHT:
-			sprites[encontrar('player')].movRight = false;
+			//sprites[encontrar('player')].movRight = false;
+			sprites[encontrar('batman')].status = '';
+			sprites[encontrar('batman')].frequencia=20;
+
 		break;
 		case LEFT:
 			sprites[encontrar('player')].movLeft = false;
